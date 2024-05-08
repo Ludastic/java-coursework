@@ -1,0 +1,98 @@
+@import url(fonts.css);
+.bgimg {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgimg1 {
+    background-image: url("/resources/imgs/circle.jpg");
+    min-height: 100vh;
+}
+
+.bgimg2 {
+    background-image: url("/resources/imgs/stick.jpg");
+    min-height: 100vh;
+}
+
+.bgimg3 {
+    background-image: url("/resources/imgs/jump.jpg");
+    min-height: 100vh;
+}
+
+.bgimg4 {
+    background-image: url("/resources/imgs/spin.jpg");
+    min-height: 40%;
+}
+
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+.caption span.border {
+    color: #ff0000;
+    padding: 18px;
+    font-size: 4rem;
+    letter-spacing: 10px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+}
+
+.blank {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #273939;
+    color: red;
+    padding: 2rem 0rem;
+    max-width: 100%;
+    text-align: justify
+}
+.blank p {
+    padding-left: 4rem;
+    width: 60%;
+    font-family: main_text;
+    font-size: 1.5rem;
+    text-align: justify;
+    color: red;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.outer-div {
+    min-width: 15vw;
+    font-size: 1.5rem;
+    margin-left: 3%;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px solid red; /* Внешняя красная рамка */
+    background-color: transparent; /* Фон внутри внешней рамки */
+    box-shadow: 0 0 0 2px black; /* Внутренняя черная рамка */
+    transition: transform 0.3s ease;
+}
+
+.outer-div:hover {
+    transform: scale(1.1);
+}
+
+
+.inner-div {
+    width: 100%;
+    border-radius: 1.7rem;
+    border: 2px solid black; /* Внутренняя черная рамка */
+    background-color: transparent; /* Фон внутри черной рамки */
+    padding: 10px; /* Отступ внутри черной рамки */
+}
+
+.btn-open {
+    vertical-align: baseline;
+}

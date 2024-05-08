@@ -1,0 +1,66 @@
+@import url(fonts.css);
+.bgimg {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgimg1 {
+    background-image: url("/resources/imgs/circle.jpg");
+    min-height: 80%;
+}
+
+.bgimg2 {
+    background-image: url("/resources/imgs/stick.jpg");
+    min-height: 80%;
+}
+
+.bgimg3 {
+    background-image: url("/resources/imgs/jump.jpg");
+    min-height: 80%;
+}
+
+.bgimg4 {
+    background-image: url("/resources/imgs/spin.jpg");
+    min-height: 40%;
+}
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+.caption span.border {
+    color: #ff0000;
+    padding: 18px;
+    font-size: 4rem;
+    letter-spacing: 10px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+}
+.blank h3 {
+    font-family: main_text;
+    font-size: 3rem;
+    text-align: center;
+    color: red;
+    -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: black;
+}
+.blank {
+    background-color: #273939;
+    color: red;
+    padding: 2rem 6rem;
+    text-align: justify
+}
+.blank p {
+    font-family: main_text;
+    font-size: 1.5rem;
+    text-align: justify;
+    color: red;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}

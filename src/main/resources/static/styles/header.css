@@ -1,0 +1,68 @@
+@import url(fonts.css);
+html {
+    height: 100%;
+    font-family: main_text;
+}
+p {
+    z-index:3;
+}
+a {
+    color: red;
+    font-style: normal;
+    text-decoration: none;
+    z-index: 3;
+    transition: transform 0.3s ease;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+}
+a:visited {
+    color: red;
+    font-style: normal;
+    text-decoration: none;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+}
+a:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.header {
+    top: 0;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: top 0.5s;
+}
+.hidden {
+    top: -100px; /* Убираем меню вверх за пределы видимости */
+}
+.header p {
+    font-family: "main_text", monospace;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 2.3rem;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+    color: #ff0000;
+}
+.header a {
+    font-family: "main_text", monospace;
+    font-size: 2rem;
+}
+.left-header {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: #ff0000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.left-header a {
+    margin-right: 2.3rem;
+}

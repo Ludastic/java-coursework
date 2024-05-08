@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/resources/styles/header.css">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/reviews.css">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/footer.css">
+    <script src="/resources/scripts/add_review_flip.js" defer></script>
+    <script src="/resources/scripts/header_flip.js" defer></script>
+    <script
+            src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous">
+    </script>
+    <script src="/resources/scripts/overlay_menu.js" defer></script>
+</head>
+<body style="margin: 0px; width: 100%">
+    <header class="header">
+        <p>ПОТЕХА!</p>
+        <div class = "left-header" style="-items: baseline">
+            <a href="main">Главная</a>
+            <a href="portfolio">Портфолио</a>
+            <a href="about_us">О нас</a>
+            <a href="reviews">Отзывы</a>
+            <a href="contact_us">Оставить заявку</a>
+        </div>
+    </header>
+    <div class="floating-open-button outer-div">
+        <div class="menu-btn inner-div">
+            <a class = "btn-open" href="javascript:void(0)">Оставить отзыв!</a>
+        </div>
+    </div>
+    <div style = "min-height: 100vh" class = "bgimg_non_parallax" id="reviews">
+        <div style="height: 6rem"></div>
+        <div th:each="comment_item : ${comments}" class="outer-div">
+            <div class="review-block inner-div">
+                <p th:text="${comment_item.header}" class="review-comment-header"></p>
+                <p th:text="${comment_item.text}" class="review-comment-text" r></p>
+                <p th:text="${comment_item.name}" class="review-comment-name"></p>
+                <p th:text="${comment_item.eventName}" class="review-comment-name"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bgimg bgimg4">
+        <footer class="footer-container">
+            <div class="footer-subcontainer">
+                <p style="font-size: 3rem; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: black;">ПОТЕХА!</p>
+                <p>Агенство по организации мероприятий в старо-славянском сеттинге!</p>
+            </div>
+            <div class="footer-subcontainer">
+                <p style="font-size: 2.5rem; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: black;">Свяжитесь с нами</p>
+                <p>По телефону:</p>
+                <a class="tel">+7 (812) 522 32-32</a>
+                <p>В телеграмме:</p>
+                <a class="telega">Telegram</a>
+            </div>
+            <div class="footer-subcontainer">
+                <p style="font-size: 2.5rem; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: black;">Карта сайта</p>
+                <a href="main">Главная</a>
+                <a href="portfolio">Портфолио</a>
+                <a href="about_us">О нас</a>
+                <a href="reviews">Отзывы</a>
+                <a href="contact_us">Оставить заявку</a>
+            </div>
+        </footer>
+    </div>
+
+    <div class="overlay">
+        <div class="menu">
+            <div class="container">
+                <div style=" display: flex; flex-direction: column; align-items: center">
+                    <form class="review_form" method="POST" th:action="@{/add_comment}" th:object="${comment}">
+                        <div class="form-group">
+                            <label for="name">Введите ваше имя и фамилию</label>
+                            <div class="outer-div2">
+                                <div class="inner-div2">
+                                    <input type="text" id="name" name="name" th:field="*{name}" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="header">Введите заголовок вашего будущего отзыва</label>
+                            <div class="outer-div2">
+                                <div class="inner-div2">
+                                    <input type="text" id="header" name="header" th:field="*{header}" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Напишите отзыв</label>
+                            <div class="outer-div3">
+                                <div class="inner-div2">
+                                    <textarea style="resize: none" rows="8" cols="40" required id="text" name="text" th:field="*{text}"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-name">Сообщите всем - какое мероприятие у вас было</label>
+                            <div class="outer-div2">
+                                <div class="inner-div2">
+                                    <input type="text" id="event-name" name="event-name" th:field="*{eventName}" required>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="outer-div2">
+                            <div class="inner-div2">
+                                <button type="submit">Отправить отзыв</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

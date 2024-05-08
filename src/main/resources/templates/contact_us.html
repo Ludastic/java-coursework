@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/resources/styles/header.css">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/footer.css">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/contact_us.css">
+    <script src="/resources/scripts/header_flip.js" defer></script>
+</head>
+    <body style="margin: 0px; width: 100%">
+        <header class="header">
+            <p>ПОТЕХА!</p>
+            <div class = "left-header" style="-items: baseline">
+                <a href="main">Главная</a>
+                <a href="portfolio">Портфолио</a>
+                <a href="about_us">О нас</a>
+                <a href="reviews">Отзывы</a>
+                <a href="contact_us">Оставить заявку</a>
+            </div>
+        </header>
+
+
+        <div style = "min-height: 100vh; display: flex; align-items: center" class = "bgimg_non_parallax" id="reviews">
+            <div style="height: 6rem"></div>
+            <form style = "width: 60%; background-color: rgba(255, 255, 255, 0.3); padding: 2rem; border-style: solid; border-color: transparent; border-radius: 1.7rem;"class="review_form" method="POST" th:action="@{/add_comment}" th:object="${order}">
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <div class="outer-div2">
+                        <div class="inner-div2">
+                            <input type="text" id="name" name="name" th:field="*{name}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Фамилия</label>
+                    <div class="outer-div2">
+                        <div class="inner-div2">
+                            <input type="text" id="last_name" name="last_name" th:field="*{lastName}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="amount_of_people">Количество запланированных гостей на мероприятии</label>
+                    <div class="outer-div2">
+                        <div class="inner-div2">
+                            <input type="number" id="amount_of_people" name="amount_of_people" th:field="*{amountOfPeople}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="event_type">Опишите максимально подробно задумку вашего мероприятия</label>
+                    <div class="outer-div3">
+                        <div class="inner-div2">
+                            <textarea style="resize: none" rows="8" cols="40" required id="event_type" name="event_type" th:field="*{eventType}"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tel">Номер телефона</label>
+                    <div class="outer-div2">
+                        <div class="inner-div2">
+                            <input type="tel" id="tel" name="tel" th:field="*{telNumb}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="outer-div2">
+                    <div class="inner-div2">
+                        <button type="submit">Отправить заявку</button>
+                    </div>
+                </div>
+            </form>
+            <div style="height: 4rem"></div>
+        </div>
+
+
+        <div class="bgimg bgimg4">
+            <footer class="footer-container">
+                <div class="footer-subcontainer">
+                    <p style="font-size: 3rem; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: black;">ПОТЕХА!</p>
+                    <p>Агенство по организации мероприятий в старо-славянском сеттинге!</p>
+                </div>
+                <div class="footer-subcontainer">
+                    <p style="font-size: 2.5rem; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: black;">Свяжитесь с нами</p>
+                    <p>По телефону:</p>
+                    <a class="tel">+7 (812) 522 32-32</a>
+                    <p>В телеграмме:</p>
+                    <a class="telega">Telegram</a>
+                </div>
+                <div class="footer-subcontainer">
+                    <p style="font-size: 2.5rem; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: black;">Карта сайта</p>
+                    <a href="main">Главная</a>
+                    <a href="portfolio">Портфолио</a>
+                    <a href="about_us">О нас</a>
+                    <a href="reviews">Отзывы</a>
+                    <a href="contact_us">Оставить заявку</a>
+                </div>
+            </footer>
+        </div>
+<!--<div style="display: flex; flex-direction: column;">-->
+<!--    <form method="POST" th:action="@{/make_order}" th:object="${request}">-->
+<!--        <div class="form-group">-->
+<!--            <label for="username">Имя пользователя:</label>-->
+<!--            <input type="text" id="username" name="username" th:field="*{name}" required>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="password">Пароль:</label>-->
+<!--            <input type="password" id="password" name="password" th:field="*{telNumb}" required>-->
+<!--        </div>-->
+<!--        <div style="display: flex; justify-content: center; margin-top: 40px;">-->
+<!--            <button type="submit">Регистрация</button>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--</div>-->
+    </body>
+</html>

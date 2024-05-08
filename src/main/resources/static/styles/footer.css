@@ -1,0 +1,47 @@
+.footer-container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+.footer-subcontainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-subcontainer h3 {
+    font-family: main_text;
+    color: red;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+    margin-bottom: 1.5rem;
+}
+.footer-subcontainer a {
+    display:inline;
+    font-family: main_text;
+    font-size: 1.7rem;
+    color: red;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    margin-bottom: 0.5rem;
+
+}
+
+.footer-subcontainer p {
+    font-family: main_text;
+    font-size: 1.7rem;
+    color: red;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    margin-bottom: 0.5rem;
+}
+
+.tel::before{
+    content: url("../imgs/tel-ico.png");
+    transform: scale(0.5);
+}
+.telega::before{
+    content: url("../imgs/telega-ico.svg");
+}
